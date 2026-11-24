@@ -4,19 +4,25 @@
 
 /* Prospect demo styles. Two typefaces per site, injected as --font-head and --font-body. */
 :root{
-  --primary:#1b365d;
-  --accent:#d65a1e;
-  --bg:#f3f4f6;
-  --ink:#1a1a1a;
-  --muted:#5a5e66;
-  --paper:#ffffff;
-  --line:#d5d8de;
-  --header:#ffffff;
-  --header-ink:#1b365d;
+  --primary:#F5F1EA;
+  --accent:#E8742A;
+  --bg:#0F1E33;
+  --ink:#F5F1EA;
+  --muted:#C9C3B8;
+  --paper:#162640;
+  --line:#2A3F5A;
+  --header:#0F1E33;
+  --header-ink:#F5F1EA;
+  --btn-ink:#0F1E33;
+  --secondary:#2368B1;
+  --footer:#0F1E33;
+  --footer-ink:#F5F1EA;
+  --logo-h:44px;
+  --logo-max-w:220px;
   --ribbon:#3f2a1d;
   --font-head:Georgia,"Iowan Old Style","Times New Roman",serif;
   --font-body:system-ui,-apple-system,"Segoe UI",sans-serif;
-  --header-h:4.25rem;
+  --header-h:calc(var(--logo-h) + 1.5rem);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{font-size:17px;-webkit-text-size-adjust:100%}
@@ -75,11 +81,11 @@ p{margin:0 0 1em}
   padding:.6rem 0;
 }
 .brand{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:var(--header-ink);min-width:0}
-.brand img{height:44px;width:auto;max-width:200px}
+.brand img{height:var(--logo-h);width:auto;max-width:var(--logo-max-w)}
 .wordmark{font-family:var(--font-head);font-weight:500;font-size:1.05rem;line-height:1.2;letter-spacing:-0.02em}
 .callbtn{
   background:var(--accent);
-  color:#fff;
+  color:var(--btn-ink);
   text-decoration:none;
   font-weight:500;
   font-size:.9rem;
@@ -109,7 +115,7 @@ p{margin:0 0 1em}
 .btn{
   display:inline-block;
   background:var(--accent);
-  color:#fff;
+  color:var(--btn-ink);
   text-decoration:none;
   font-weight:500;
   font-size:.95rem;
@@ -155,7 +161,7 @@ p{margin:0 0 1em}
 .hero-bleed h1,.hero-bleed .eyebrow,.hero-bleed .lead{color:#f8f6f1}
 .hero-bleed .eyebrow{color:rgba(248,246,241,.78)}
 .hero-bleed .lead{color:rgba(248,246,241,.86)}
-.hero-bleed .btn{background:#fff;color:#161412;border-color:#fff}
+.hero-bleed .btn{background:var(--accent);color:var(--btn-ink);border-color:var(--accent)}
 @keyframes hero-settle{from{transform:scale(1.08);opacity:.7}to{transform:scale(1.04);opacity:1}}
 @keyframes fade-up{from{opacity:0;transform:translateY(.6rem)}to{opacity:1;transform:none}}
 .hero-bleed .hero-copy{animation:fade-up 1s ease both .2s}
@@ -259,12 +265,12 @@ blockquote.review{margin:0}
 .cta-band{padding:4.5rem 0;border-top:1px solid var(--line)}
 .cta-band h2{max-width:16ch}
 
-.foot{padding:3rem 0 2rem;font-size:.9rem;color:var(--muted)}
-.foot a{color:var(--ink);text-decoration:none}
+.foot{padding:3rem 0 2rem;font-size:.9rem;background:var(--footer);color:var(--footer-ink)}
+.foot a{color:var(--footer-ink);text-decoration:none}
 .cols{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
-.foot h3{color:var(--ink);font-family:var(--font-body);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;margin:0 0 .6rem}
-.credit{margin-top:2.5rem;padding-top:1.1rem;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
-.credit a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.foot h3{color:var(--footer-ink);font-family:var(--font-body);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;margin:0 0 .6rem}
+.credit{margin-top:2.5rem;padding-top:1.1rem;border-top:1px solid currentColor;opacity:.9;font-size:.8rem}
+.credit a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 
 /* Dark bases */
 .base-dark{background:var(--bg);color:var(--ink)}
