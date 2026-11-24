@@ -255,8 +255,12 @@ blockquote.review{margin:0}
 }
 .layout-editorial .gallery img{aspect-ratio:4/5}
 .layout-editorial .gallery figure:nth-child(3n+1) img{aspect-ratio:16/11}
-.layout-crisp .gallery{grid-template-columns:1fr 1fr;gap:.5rem}
+.layout-crisp .gallery{grid-template-columns:1fr;gap:.5rem}
 .layout-crisp .gallery img{aspect-ratio:4/3}
+@media(min-width:700px){
+  .layout-crisp .gallery{grid-template-columns:1fr 1fr}
+  .layout-crisp .gallery figure:only-child{grid-column:1/-1}
+}
 
 .towns{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.35rem 1.4rem}
 .towns li{margin:0}
